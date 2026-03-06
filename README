@@ -1,0 +1,21 @@
+    # File Organizer Agent
+
+An AI-powered file organization agent built with Python and Groq.
+Give it a folder path and an instruction, and it organizes your files automatically.
+
+## Features
+- Organize files into categorized folders
+- Move, copy, rename and delete files
+- Create and empty folders
+- Get file and folder info
+
+## Setup
+1. Clone the repo
+2. Run `uv sync`
+3. Add your Groq API key to a `.env` file: `GROQ_API_KEY=your_key_here`
+4. Run `uv run main.py`
+
+## Tech
+- Python
+- Groq API (moonshotai/kimi-k2)
+- pathlib, shutil
