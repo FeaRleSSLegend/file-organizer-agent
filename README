@@ -1,21 +1,36 @@
-    # File Organizer Agent
+# file-organizer-agent
 
-An AI-powered file organization agent built with Python and Groq.
-Give it a folder path and an instruction, and it organizes your files automatically.
+A conversational AI agent that organizes your files and folders through natural language instructions. Tell it what you want done, and it figures out the steps.
 
-## Features
-- Organize files into categorized folders
-- Move, copy, rename and delete files
-- Create and empty folders
+## What it does
+
+You describe what you want — "organize my downloads folder by file type" or "rename all the images in this folder" — and the agent breaks that down into actions and executes them. No clicking through menus, no manual sorting.
+
+## How it works
+
+The agent uses Groq's LLM with tool calling. When you give it an instruction, the model decides which file operations to run, calls them in the right order, and keeps going until the job is done. Every action runs on your actual filesystem.
+
+Built the tool calling loop from scratch without any agent framework, so every part of how the agent thinks and acts is visible in the code.
+
+## Tools the agent has
+
+- List folder contents
+- Create folders
+- Move and rename files
+- Copy files and folders
+- Delete files and folders
 - Get file and folder info
+- Empty folders
+
+## Stack
+
+- Python
+- Groq API (Kimi K2)
+- python-dotenv
+- uv
 
 ## Setup
+
 1. Clone the repo
 2. Run `uv sync`
-3. Add your Groq API key to a `.env` file: `GROQ_API_KEY=your_key_here`
-4. Run `uv run main.py`
-
-## Tech
-- Python
-- Groq API (moonshotai/kimi-k2)
-- pathlib, shutil
+3. Add your Groq API key to a `.env` file:
